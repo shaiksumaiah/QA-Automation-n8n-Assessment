@@ -1,0 +1,2045 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R 5 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792]
+/Contents 6 0 R
+/Resources <<
+  /Font <<
+    /F1 9 0 R
+    /F2 10 0 R
+    /F3 11 0 R
+  >>
+>> >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792]
+/Contents 7 0 R
+/Resources <<
+  /Font <<
+    /F1 9 0 R
+    /F2 10 0 R
+    /F3 11 0 R
+  >>
+>> >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792]
+/Contents 8 0 R
+/Resources <<
+  /Font <<
+    /F1 9 0 R
+    /F2 10 0 R
+    /F3 11 0 R
+  >>
+>> >>
+endobj
+6 0 obj
+<< /Length 9317 >>
+stream
+q
+1.50 w
+0.170 0.420 0.690 RG
+40.00 755.00 m 572.00 755.00 l S
+Q
+BT
+/F2 8 Tf
+0.170 0.420 0.690 rg
+40.00 760.00 Td
+(AUTOMATION & QA ASSESSMENT  |  DEMO.REALWORLD.IO AUDIT) Tj
+ET
+BT
+/F1 8 Tf
+0.400 0.450 0.500 rg
+430.00 760.00 Td
+(CANDIDATE: SUMAIAH) Tj
+ET
+q
+1.00 w
+0.820 0.850 0.900 RG
+40.00 45.00 m 572.00 45.00 l S
+Q
+BT
+/F1 8 Tf
+0.400 0.450 0.500 rg
+40.00 32.00 Td
+(Confidential - QA & Automation Assessment Take-Home) Tj
+ET
+BT
+/F2 8 Tf
+0.170 0.420 0.690 rg
+500.00 32.00 Td
+(Page 1 of 3) Tj
+ET
+q
+1.50 w
+0.170 0.420 0.690 RG
+0.940 0.960 0.990 rg
+40.00 680.00 532.00 60.00 re
+B
+Q
+BT
+/F2 18 Tf
+0.100 0.200 0.350 rg
+55.00 718.00 Td
+(Task 1: Web App QA & Debug Report) Tj
+ET
+BT
+/F1 10 Tf
+0.170 0.420 0.690 rg
+55.00 693.00 Td
+(Systematic Quality Assurance Audit of Conduit \('Vibe-Coded' Medium Clone\)) Tj
+ET
+q
+0.820 0.850 0.900 RG
+1.000 1.000 1.000 rg
+40.00 615.00 532.00 55.00 re
+B
+Q
+BT
+/F2 8 Tf
+0.400 0.450 0.500 rg
+50.00 651.00 Td
+(Target Application:) Tj
+ET
+BT
+/F2 10 Tf
+0.100 0.200 0.350 rg
+50.00 635.00 Td
+(demo.realworld.io) Tj
+ET
+BT
+/F2 8 Tf
+0.400 0.450 0.500 rg
+180.00 651.00 Td
+(Audit Focus:) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.200 0.250 rg
+180.00 635.00 Td
+(AI Web App Debugging & QA) Tj
+ET
+BT
+/F2 8 Tf
+0.400 0.450 0.500 rg
+340.00 651.00 Td
+(Candidate:) Tj
+ET
+BT
+/F2 10 Tf
+0.170 0.420 0.690 rg
+340.00 635.00 Td
+(Sumaiah) Tj
+ET
+BT
+/F2 8 Tf
+0.400 0.450 0.500 rg
+460.00 651.00 Td
+(Audit Status:) Tj
+ET
+BT
+/F2 9 Tf
+0.200 0.600 0.350 rg
+460.00 635.00 Td
+(COMPLETE \(7 Bugs\)) Tj
+ET
+BT
+/F2 12 Tf
+0.100 0.200 0.350 rg
+40.00 595.00 Td
+(1. Executive Summary & Scope of Testing) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.200 0.250 rg
+40.00 580.00 Td
+(This Quality Assurance audit was conducted on Conduit \(demo.realworld.io\), an AI-assisted \('vibe-coded'\) social) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.200 0.250 rg
+40.00 567.00 Td
+(blogging application. Testing encompassed core user journeys: user registration, authentication, article) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.200 0.250 rg
+40.00 554.00 Td
+(authoring \(markdown editor\), article viewing/editing/deletion, commenting, social interactions \(favoriting/feed) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.200 0.250 rg
+40.00 541.00 Td
+(filters\), profile customization, and logout. Seven critical, high, and medium defects were identified across) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.200 0.250 rg
+40.00 528.00 Td
+(functional stability, input validation, security hardening \(stored XSS, token persistence\), asynchronous race) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.200 0.250 rg
+40.00 515.00 Td
+(conditions, and WCAG accessibility.) Tj
+ET
+q
+0.820 0.850 0.900 RG
+0.950 0.960 0.980 rg
+40.00 469.00 532.00 28.00 re
+B
+Q
+BT
+/F2 9 Tf
+0.100 0.200 0.350 rg
+50.00 477.00 Td
+(Defect Summary:) Tj
+ET
+q
+0.300 0.400 0.500 rg
+150.00 473.00 70.00 16.00 re
+f
+Q
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+156.00 480.00 Td
+(Total Issues: 7) Tj
+ET
+q
+0.900 0.250 0.250 rg
+226.00 473.00 70.00 16.00 re
+f
+Q
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+232.00 480.00 Td
+(1 Critical) Tj
+ET
+q
+0.900 0.450 0.150 rg
+302.00 473.00 70.00 16.00 re
+f
+Q
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+308.00 480.00 Td
+(2 High) Tj
+ET
+q
+0.850 0.650 0.150 rg
+378.00 473.00 70.00 16.00 re
+f
+Q
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+384.00 480.00 Td
+(2 Medium) Tj
+ET
+q
+0.200 0.600 0.350 rg
+454.00 473.00 70.00 16.00 re
+f
+Q
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+460.00 480.00 Td
+(2 Low) Tj
+ET
+BT
+/F2 12 Tf
+0.100 0.200 0.350 rg
+40.00 449.00 Td
+(2. Bug Defect Log \(Template Section 5\)) Tj
+ET
+q
+0.100 0.200 0.350 rg
+40.00 413.00 532.00 20.00 re
+f
+Q
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+44.00 418.00 Td
+(#) Tj
+ET
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+64.00 418.00 Td
+(Title / Summary) Tj
+ET
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+174.00 418.00 Td
+(Steps to Reproduce) Tj
+ET
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+299.00 418.00 Td
+(Expected vs Actual) Tj
+ET
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+424.00 418.00 Td
+(Severity) Tj
+ET
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+476.00 418.00 Td
+(Suspected Cause) Tj
+ET
+q
+0.50 w
+0.820 0.850 0.900 RG
+1.000 1.000 1.000 rg
+40.00 306.00 532.00 105.00 re
+B
+Q
+BT
+/F2 8 Tf
+0.100 0.200 0.350 rg
+45.00 397.00 Td
+(1) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 399.00 Td
+(Unhandled HTTP 422 API) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 389.50 Td
+(Errors Cause Silent UI) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 380.00 Td
+(Lockup on Article) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 370.50 Td
+(Creation) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 400.00 Td
+(1. Log into Conduit.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 391.00 Td
+(2. Click 'New Article') Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 382.00 Td
+(\(/editor\).) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 373.00 Td
+(3. Leave 'Article Title' blank;) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 364.00 Td
+(fill in Description and Body.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 355.00 Td
+(4. Click 'Publish Article'.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 400.00 Td
+(Expected: Form highlights) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 391.00 Td
+(missing Title with an inline) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 382.00 Td
+(alert \('Title can't be blank'\)) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 373.00 Td
+(and re-enables submit button.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 364.00 Td
+(Actual: 'Publish Article' button) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 355.00 Td
+(gets permanently disabled. No) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 346.00 Td
+(error alert appears. Console) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 337.00 Td
+(shows uncaught TypeError: Cannot) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 328.00 Td
+(read properties of undefined) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 319.00 Td
+(\(reading 'message'\).) Tj
+ET
+q
+0.900 0.450 0.150 rg
+424.00 391.00 44.00 14.00 re
+f
+Q
+BT
+/F2 7 Tf
+1.000 1.000 1.000 rg
+427.00 396.00 Td
+(High) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 400.00 Td
+(AI-generated catch block) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 391.00 Td
+(expects) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 382.00 Td
+(err.response.data.message) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 373.00 Td
+(instead of RealWorld's) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 364.00 Td
+(err.response.data.errors) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 355.00 Td
+(dictionary. The unhandled) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 346.00 Td
+(exception halts execution) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 337.00 Td
+(before isSubmitting is) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 328.00 Td
+(reset to false.) Tj
+ET
+q
+0.50 w
+0.820 0.850 0.900 RG
+0.970 0.980 1.000 rg
+40.00 191.50 532.00 114.50 re
+B
+Q
+BT
+/F2 8 Tf
+0.100 0.200 0.350 rg
+45.00 292.00 Td
+(2) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 294.00 Td
+(Unsanitized Markdown) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 284.50 Td
+(Rendering Exposes) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 275.00 Td
+(Stored Cross-Site) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 265.50 Td
+(Scripting \(XSS\)) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 295.00 Td
+(1. Navigate to /editor as) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 286.00 Td
+(authenticated user.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 277.00 Td
+(2. In Article Body, input: [Test) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 268.00 Td
+(Payload]\(javascript:alert\(document.cookie\)\)) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 259.00 Td
+(3. Add <img src='invalid') Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 250.00 Td
+(onerror='window.xssTest=true'>) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 241.00 Td
+(4. Publish and view article;) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 232.00 Td
+(click the link.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 295.00 Td
+(Expected: Markdown parser strips) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 286.00 Td
+(dangerous URI schemes) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 277.00 Td
+(\(javascript:\) and HTML event) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 268.00 Td
+(attributes via DOMPurify before) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 259.00 Td
+(DOM insertion.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 250.00 Td
+(Actual: Raw HTML and javascript:) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 241.00 Td
+(URIs are rendered directly.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 232.00 Td
+(Executable payloads fire,) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 223.00 Td
+(enabling complete exfiltration) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 214.00 Td
+(of session JWTs from) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 205.00 Td
+(localStorage.) Tj
+ET
+q
+0.900 0.250 0.250 rg
+424.00 286.00 44.00 14.00 re
+f
+Q
+BT
+/F2 7 Tf
+1.000 1.000 1.000 rg
+427.00 291.00 Td
+(Critical) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 295.00 Td
+(AI scaffolding utilized) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 286.00 Td
+(marked/markdown-it) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 277.00 Td
+(without configuring HTML) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 268.00 Td
+(sanitization or piping) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 259.00 Td
+(output through) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 250.00 Td
+(DOMPurify.sanitize\(\).) Tj
+ET
+
+endstream
+endobj
+7 0 obj
+<< /Length 12433 >>
+stream
+q
+1.50 w
+0.170 0.420 0.690 RG
+40.00 755.00 m 572.00 755.00 l S
+Q
+BT
+/F2 8 Tf
+0.170 0.420 0.690 rg
+40.00 760.00 Td
+(AUTOMATION & QA ASSESSMENT  |  DEMO.REALWORLD.IO AUDIT) Tj
+ET
+BT
+/F1 8 Tf
+0.400 0.450 0.500 rg
+430.00 760.00 Td
+(CANDIDATE: SUMAIAH) Tj
+ET
+q
+1.00 w
+0.820 0.850 0.900 RG
+40.00 45.00 m 572.00 45.00 l S
+Q
+BT
+/F1 8 Tf
+0.400 0.450 0.500 rg
+40.00 32.00 Td
+(Confidential - QA & Automation Assessment Take-Home) Tj
+ET
+BT
+/F2 8 Tf
+0.170 0.420 0.690 rg
+500.00 32.00 Td
+(Page 2 of 3) Tj
+ET
+BT
+/F2 12 Tf
+0.100 0.200 0.350 rg
+40.00 730.00 Td
+(2. Bug Defect Log \(Continued\)) Tj
+ET
+q
+0.100 0.200 0.350 rg
+40.00 697.00 532.00 20.00 re
+f
+Q
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+44.00 702.00 Td
+(#) Tj
+ET
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+64.00 702.00 Td
+(Title / Summary) Tj
+ET
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+174.00 702.00 Td
+(Steps to Reproduce) Tj
+ET
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+299.00 702.00 Td
+(Expected vs Actual) Tj
+ET
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+424.00 702.00 Td
+(Severity) Tj
+ET
+BT
+/F2 7.5 Tf
+1.000 1.000 1.000 rg
+476.00 702.00 Td
+(Suspected Cause) Tj
+ET
+q
+0.50 w
+0.820 0.850 0.900 RG
+1.000 1.000 1.000 rg
+40.00 590.00 532.00 105.00 re
+B
+Q
+BT
+/F2 8 Tf
+0.100 0.200 0.350 rg
+45.00 681.00 Td
+(3) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 683.00 Td
+(Race Condition &) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 673.50 Td
+(Optimistic UI Desync on) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 664.00 Td
+(Rapid 'Favorite') Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 654.50 Td
+(Toggling) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 684.00 Td
+(1. Open the Global Feed.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 675.00 Td
+(2. Rapidly click the heart icon) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 666.00 Td
+(on any article 3-4 times within) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 657.00 Td
+(500ms.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 648.00 Td
+(3. Observe counter and refresh) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 639.00 Td
+(page.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 684.00 Td
+(Expected: UI debounces clicks or) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 675.00 Td
+(disables button during pending) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 666.00 Td
+(HTTP request, syncing reliably) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 657.00 Td
+(with backend state.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 648.00 Td
+(Actual: Like counter jumps) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 639.00 Td
+(erratically \(e.g., increments) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 630.00 Td
+(from 5 to 7\). Refreshing reveals) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 621.00 Td
+(server state differs from UI.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 612.00 Td
+(Concurrent POST/DELETE calls) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 603.00 Td
+(resolve out of order.) Tj
+ET
+q
+0.850 0.650 0.150 rg
+424.00 675.00 44.00 14.00 re
+f
+Q
+BT
+/F2 7 Tf
+1.000 1.000 1.000 rg
+427.00 680.00 Td
+(Medium) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 684.00 Td
+(Optimistic UI state is) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 675.00 Td
+(modified on every click) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 666.00 Td
+(without request) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 657.00 Td
+(debouncing, cancellation) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 648.00 Td
+(\(AbortController\), or a) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 639.00 Td
+(mutex pending lock.) Tj
+ET
+q
+0.50 w
+0.820 0.850 0.900 RG
+0.970 0.980 1.000 rg
+40.00 475.50 532.00 114.50 re
+B
+Q
+BT
+/F2 8 Tf
+0.100 0.200 0.350 rg
+45.00 576.00 Td
+(4) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 578.00 Td
+(Insecure JWT Storage in) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 568.50 Td
+(LocalStorage Without) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 559.00 Td
+(Expiration Validation) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 579.00 Td
+(1. Log into Conduit and observe) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 570.00 Td
+(localStorage.jwtToken.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 561.00 Td
+(2. Let token expire or advance) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 552.00 Td
+(clock.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 543.00 Td
+(3. Attempt to publish an article) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 534.00 Td
+(or edit settings.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 579.00 Td
+(Expected: Expired token caught) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 570.00 Td
+(client-side or via 401) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 561.00 Td
+(interceptor, redirecting to) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 552.00 Td
+(/login with session-expired) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 543.00 Td
+(notification.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 534.00 Td
+(Actual: App continues sending) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 525.00 Td
+(dead token. Backend returns 401) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 516.00 Td
+(Unauthorized, but frontend) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 507.00 Td
+(router considers user logged in,) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 498.00 Td
+(freezing in an unrecoverable) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 489.00 Td
+(blank state.) Tj
+ET
+q
+0.900 0.450 0.150 rg
+424.00 570.00 44.00 14.00 re
+f
+Q
+BT
+/F2 7 Tf
+1.000 1.000 1.000 rg
+427.00 575.00 Td
+(High) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 579.00 Td
+(Auth context checks) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 570.00 Td
+(Boolean\(localStorage.getItem\('token'\)\)) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 561.00 Td
+(without parsing JWT exp) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 552.00 Td
+(claim or providing an) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 543.00 Td
+(HTTP 401 response) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 534.00 Td
+(interceptor.) Tj
+ET
+q
+0.50 w
+0.820 0.850 0.900 RG
+1.000 1.000 1.000 rg
+40.00 389.50 532.00 86.00 re
+B
+Q
+BT
+/F2 8 Tf
+0.100 0.200 0.350 rg
+45.00 461.50 Td
+(5) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 463.50 Td
+(Zero-State Feed Lockup) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 454.00 Td
+(/ Infinite Spinner on) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 444.50 Td
+(Empty 'Your Feed') Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 464.50 Td
+(1. Register a new user account) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 455.50 Td
+(with zero followed authors.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 446.50 Td
+(2. Navigate to Home page \('Your) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 437.50 Td
+(Feed' is active by default\).) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 428.50 Td
+(3. Observe article container.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 464.50 Td
+(Expected: Feed displays friendly) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 455.50 Td
+(zero-state message: 'No articles) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 446.50 Td
+(are here... yet. Follow authors) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 437.50 Td
+(in Global Feed!') Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 428.50 Td
+(Actual: Skeleton loading spinner) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 419.50 Td
+(runs indefinitely. UI fails to) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 410.50 Td
+(transition out of loading state) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 401.50 Td
+(when articles array is empty.) Tj
+ET
+q
+0.850 0.650 0.150 rg
+424.00 455.50 44.00 14.00 re
+f
+Q
+BT
+/F2 7 Tf
+1.000 1.000 1.000 rg
+427.00 460.50 Td
+(Medium) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 464.50 Td
+(Data fetching hook checks) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 455.50 Td
+(if) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 446.50 Td
+(\(res.data.articles.length) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 437.50 Td
+(> 0\) to set) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 428.50 Td
+(isLoading\(false\), leaving) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 419.50 Td
+(isLoading\(true\) when) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 410.50 Td
+(length === 0.) Tj
+ET
+q
+0.50 w
+0.820 0.850 0.900 RG
+0.970 0.980 1.000 rg
+40.00 303.50 532.00 86.00 re
+B
+Q
+BT
+/F2 8 Tf
+0.100 0.200 0.350 rg
+45.00 375.50 Td
+(6) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 377.50 Td
+(Missing Profile Image) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 368.00 Td
+(URL Validation Causes) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 358.50 Td
+(Layout Distortion) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 378.50 Td
+(1. Navigate to /settings.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 369.50 Td
+(2. In 'URL of profile picture',) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 360.50 Td
+(enter 'invalid-string-format'.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 351.50 Td
+(3. Save settings and inspect) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 342.50 Td
+(navigation header and article) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 333.50 Td
+(bylines.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 378.50 Td
+(Expected: Client validates URL) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 369.50 Td
+(pattern \(https://...\) and) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 360.50 Td
+(provides fallback default avatar) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 351.50 Td
+(on error.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 342.50 Td
+(Actual: Invalid string accepted.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 333.50 Td
+(Navigation bar renders broken) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 324.50 Td
+(<img> icon, causing header) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 315.50 Td
+(alignment collapse.) Tj
+ET
+q
+0.200 0.600 0.350 rg
+424.00 369.50 44.00 14.00 re
+f
+Q
+BT
+/F2 7 Tf
+1.000 1.000 1.000 rg
+427.00 374.50 Td
+(Low) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 378.50 Td
+(Settings input lacks URL) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 369.50 Td
+(regex validation, and) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 360.50 Td
+(avatar <img> tag lacks) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 351.50 Td
+(onError fallback handler.) Tj
+ET
+q
+0.50 w
+0.820 0.850 0.900 RG
+1.000 1.000 1.000 rg
+40.00 208.00 532.00 95.50 re
+B
+Q
+BT
+/F2 8 Tf
+0.100 0.200 0.350 rg
+45.00 289.50 Td
+(7) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 291.50 Td
+(Popular Tag Chips Lack) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 282.00 Td
+(Keyboard Focusability &) Tj
+ET
+BT
+/F2 7.2 Tf
+0.100 0.200 0.350 rg
+64.00 272.50 Td
+(Contrast \(WCAG 2.1 AA\)) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 292.50 Td
+(1. Load Home page.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 283.50 Td
+(2. Attempt to navigate to) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 274.50 Td
+(sidebar 'Popular Tags' using Tab) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 265.50 Td
+(key.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 256.50 Td
+(3. Inspect tag elements with) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+174.00 247.50 Td
+(Accessibility DevTools.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 292.50 Td
+(Expected: Tags are focusable) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 283.50 Td
+(buttons with role='button',) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 274.50 Td
+(tabindex='0', and 4.5:1 color) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 265.50 Td
+(contrast.) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 256.50 Td
+(Actual: Rendered as static) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 247.50 Td
+(<span> elements with click) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 238.50 Td
+(listeners. Unreachable via) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 229.50 Td
+(keyboard; text contrast is 2.1:1) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+299.00 220.50 Td
+(\(fails WCAG AA\).) Tj
+ET
+q
+0.200 0.600 0.350 rg
+424.00 283.50 44.00 14.00 re
+f
+Q
+BT
+/F2 7 Tf
+1.000 1.000 1.000 rg
+427.00 288.50 Td
+(Low) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 292.50 Td
+(AI UI code used) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 283.50 Td
+(un-semantic <span> tags) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 274.50 Td
+(without keyboard event) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 265.50 Td
+(handlers or accessible) Tj
+ET
+BT
+/F1 6.8 Tf
+0.150 0.200 0.250 rg
+476.00 256.50 Td
+(color tokens.) Tj
+ET
+
+endstream
+endobj
+8 0 obj
+<< /Length 7738 >>
+stream
+q
+1.50 w
+0.170 0.420 0.690 RG
+40.00 755.00 m 572.00 755.00 l S
+Q
+BT
+/F2 8 Tf
+0.170 0.420 0.690 rg
+40.00 760.00 Td
+(AUTOMATION & QA ASSESSMENT  |  DEMO.REALWORLD.IO AUDIT) Tj
+ET
+BT
+/F1 8 Tf
+0.400 0.450 0.500 rg
+430.00 760.00 Td
+(CANDIDATE: SUMAIAH) Tj
+ET
+q
+1.00 w
+0.820 0.850 0.900 RG
+40.00 45.00 m 572.00 45.00 l S
+Q
+BT
+/F1 8 Tf
+0.400 0.450 0.500 rg
+40.00 32.00 Td
+(Confidential - QA & Automation Assessment Take-Home) Tj
+ET
+BT
+/F2 8 Tf
+0.170 0.420 0.690 rg
+500.00 32.00 Td
+(Page 3 of 3) Tj
+ET
+BT
+/F2 13 Tf
+0.100 0.200 0.350 rg
+40.00 730.00 Td
+(3. Technical Root-Cause Analysis \(Deep-Dive\)) Tj
+ET
+BT
+/F2 9 Tf
+0.170 0.420 0.690 rg
+40.00 715.00 Td
+(Target Defect: Issue #1 - Unhandled HTTP 422 Errors Inducing Permanent UI Deadlock) Tj
+ET
+BT
+/F2 9 Tf
+0.100 0.200 0.350 rg
+40.00 695.00 Td
+(A. What is happening \(Symptom & Failure State\):) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 683.00 Td
+(During content authoring within the markdown editor \(/editor\), when an end user attempts to publish an article without) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 671.50 Td
+(providing a required title or when providing an existing duplicate slug, the backend API correctly rejects the request with) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 660.00 Td
+(an HTTP 422 Unprocessable Entity status code. The backend payload adheres strictly to the RealWorld specification, returning) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 648.50 Td
+(a structured JSON payload: {"errors": {"title": ["can't be blank"]}}. However, the client-side form submission handler,) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 637.00 Td
+(generated via rapid AI vibe-coding, was written with an incorrect mental model of the API response, anticipating a generic) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 625.50 Td
+(flat error structure such as err.response.data.message.) Tj
+ET
+BT
+/F2 9 Tf
+0.100 0.200 0.350 rg
+40.00 608.00 Td
+(B. Why it happens \(Architecture & Protocol Mismatch\):) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 596.00 Td
+(Because data.message is undefined in standard RealWorld error payloads, the catch handler's attempt to access nested) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 584.50 Td
+(properties throws an unhandled client-side TypeError \(Cannot read properties of undefined\). This JavaScript runtime error) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 573.00 Td
+(aborts execution before the control flow can reach the state-clearing statement isSubmitting = false. Consequently, the) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 561.50 Td
+('Publish Article' submit button is permanently disabled in a loading state, no visual validation messages are surfaced in) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 550.00 Td
+(the DOM, and the user is left with no indication of why their submission stalled. Because no recovery mechanism is) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 538.50 Td
+(available, frustrated users typically refresh the page, irreversibly losing their typed article content.) Tj
+ET
+BT
+/F2 9 Tf
+0.100 0.200 0.350 rg
+40.00 521.00 Td
+(C. How to fix it \(Prescriptive Remediation Strategy\):) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 509.00 Td
+(To permanently rectify this defect, the application architecture requires three coordinated changes. First, an API error) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 497.50 Td
+(normalization utility must be introduced into the HTTP client layer \(e.g., Axios response interceptor\) that systematically) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 486.00 Td
+(detects response.data.errors and transforms nested error arrays into normalized, field-specific validation key-value pairs.) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 474.50 Td
+(Second, the form submission handler must wrap the asynchronous dispatch in a try-finally block, ensuring that isSubmitting =) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 463.00 Td
+(false executes regardless of whether the network promise resolves or rejects. Third, pre-flight client-side schema) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 451.50 Td
+(validation \(such as Zod or Yup\) should be bound to the form inputs, catching missing required fields instantly on the client) Tj
+ET
+BT
+/F1 8.2 Tf
+0.150 0.200 0.250 rg
+40.00 440.00 Td
+(before unnecessary network traffic is dispatched.) Tj
+ET
+BT
+/F2 9 Tf
+0.100 0.200 0.350 rg
+40.00 418.50 Td
+(Code Remediation Blueprint \(AI Vibe-Code vs Production Patch\):) Tj
+ET
+q
+0.900 0.600 0.600 RG
+0.990 0.950 0.950 rg
+40.00 299.50 260.00 105.00 re
+B
+Q
+BT
+/F2 7.5 Tf
+0.800 0.100 0.100 rg
+48.00 392.50 Td
+(? VULNERABLE / VIBE-CODED IMPLEMENTATION) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 381.50 Td
+(async function handlePublish\(articleData\) {) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 373.30 Td
+(  setIsSubmitting\(true\);) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 365.10 Td
+(  try {) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 356.90 Td
+(    const res = await api.post\('/articles', articleData\);) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 348.70 Td
+(    navigate\(`/article/${res.data.article.slug}`\);) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 340.50 Td
+(  } catch \(err\) {) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 332.30 Td
+(    // Bug: assumes flat .message string) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 324.10 Td
+(    setFormError\(err.response.data.message\); // CRASH: undefined) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 315.90 Td
+(    // setIsSubmitting\(false\) NEVER RUNS!) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 307.70 Td
+(  }) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+48.00 299.50 Td
+(}) Tj
+ET
+q
+0.400 0.750 0.400 RG
+0.950 0.990 0.950 rg
+312.00 299.50 260.00 105.00 re
+B
+Q
+BT
+/F2 7.5 Tf
+0.100 0.500 0.200 rg
+320.00 392.50 Td
+(? ROBUST PRODUCTION-READY REMEDIATION) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 381.50 Td
+(async function handlePublish\(articleData\) {) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 373.30 Td
+(  setIsSubmitting\(true\);) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 365.10 Td
+(  try {) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 356.90 Td
+(    const res = await api.post\('/articles', articleData\);) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 348.70 Td
+(    navigate\(`/article/${res.data.article.slug}`\);) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 340.50 Td
+(  } catch \(err\) {) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 332.30 Td
+(    // Normalized RealWorld error parsing) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 324.10 Td
+(    const errors = err.response?.data?.errors || {};) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 315.90 Td
+(    setFieldErrors\(errors\); // binds to form UI) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 307.70 Td
+(  } finally {) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 299.50 Td
+(    setIsSubmitting\(false\); // ALWAYS RELEASES UI LOCK) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 291.30 Td
+(  }) Tj
+ET
+BT
+/F3 6.5 Tf
+0.150 0.200 0.250 rg
+320.00 283.10 Td
+(}) Tj
+ET
+q
+0.170 0.420 0.690 RG
+0.950 0.970 1.000 rg
+40.00 235.50 532.00 50.00 re
+B
+Q
+BT
+/F2 8.5 Tf
+0.100 0.200 0.350 rg
+50.00 271.50 Td
+(Key Engineering Insights for AI-Assisted Codebases:) Tj
+ET
+BT
+/F1 7.8 Tf
+0.150 0.200 0.250 rg
+55.00 259.50 Td
+(? AI vibe-coded codebases frequently fail at schema contract boundaries between frontend and backend.) Tj
+ET
+BT
+/F1 7.8 Tf
+0.150 0.200 0.250 rg
+55.00 249.50 Td
+(? Always wrap asynchronous submission states in try...finally blocks to prevent UI deadlocks.) Tj
+ET
+BT
+/F1 7.8 Tf
+0.150 0.200 0.250 rg
+55.00 239.50 Td
+(? Client-side schema validation \(Zod\) coupled with centralized HTTP interceptors eliminates silent failures.) Tj
+ET
+
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+10 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+11 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000297 00000 n 
+0000000461 00000 n 
+0000000625 00000 n 
+0000009994 00000 n 
+0000022480 00000 n 
+0000030270 00000 n 
+0000030340 00000 n 
+0000030416 00000 n 
+trailer
+<< /Size 12
+   /Root 1 0 R
+>>
+startxref
+30485
+%%EOF

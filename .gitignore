@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Local Helper Scripts & Generator Scripts (Hidden from GitHub)
+Loom_Walkthrough_Script.md
+*.py

@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 780" width="1450" height="780" style="background:#13131f; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <filter id="exec-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1450" height="50" fill="#1e1e2f"/>
+  <text x="25" y="32" fill="#38bdf8" font-size="16" font-weight="bold">n8n Execution #1042 — SUCCESS (Execution Time: 842ms | All Nodes Passed)</text>
+  <rect x="1280" y="12" width="140" height="26" rx="13" fill="#10b981" fill-opacity="0.2" stroke="#10b981"/>
+  <text x="1350" y="29" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">● SUCCESS (200 OK)</text>
+
+  <!-- Left: Node Execution Status Pipeline -->
+  <rect x="25" y="70" width="460" height="680" rx="10" fill="#1a1a2b" stroke="#2e2e48"/>
+  <text x="45" y="102" fill="#f8fafc" font-size="14" font-weight="bold">Workflow Execution Pipeline</text>
+
+  <!-- Steps list with green checkmarks -->
+  <g transform="translate(45, 120)">
+    <!-- Step 1 -->
+    <circle cx="14" cy="14" r="14" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+    <text x="14" y="19" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">✓</text>
+    <text x="40" y="14" fill="#f8fafc" font-size="12" font-weight="bold">Schedule Trigger</text>
+    <text x="40" y="28" fill="#94a3b8" font-size="10">Triggered at 08:00:00 UTC (1 item)</text>
+
+    <!-- Connector -->
+    <line x1="14" y1="32" x2="14" y2="52" stroke="#10b981" stroke-width="2"/>
+
+    <!-- Step 2 -->
+    <g transform="translate(0, 56)">
+      <circle cx="14" cy="14" r="14" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+      <text x="14" y="19" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="40" y="14" fill="#f8fafc" font-size="12" font-weight="bold">Fetch Top GitHub Repos</text>
+      <text x="40" y="28" fill="#94a3b8" font-size="10">HTTP 200 OK — 10 items fetched (312ms)</text>
+    </g>
+
+    <line x1="14" y1="88" x2="14" y2="108" stroke="#10b981" stroke-width="2"/>
+
+    <!-- Step 3 -->
+    <g transform="translate(0, 112)">
+      <circle cx="14" cy="14" r="14" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+      <text x="14" y="19" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="40" y="14" fill="#f8fafc" font-size="12" font-weight="bold">Check GitHub API Success</text>
+      <text x="40" y="28" fill="#94a3b8" font-size="10">Branch: TRUE (Payload validated)</text>
+    </g>
+
+    <line x1="14" y1="144" x2="14" y2="164" stroke="#10b981" stroke-width="2"/>
+
+    <!-- Step 4 -->
+    <g transform="translate(0, 168)">
+      <circle cx="14" cy="14" r="14" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+      <text x="14" y="19" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="40" y="14" fill="#f8fafc" font-size="12" font-weight="bold">Transform &amp; Filter Top 5</text>
+      <text x="40" y="28" fill="#94a3b8" font-size="10">Active filter + Top 5 sliced (12ms)</text>
+    </g>
+
+    <line x1="14" y1="200" x2="14" y2="220" stroke="#10b981" stroke-width="2"/>
+
+    <!-- Step 5 -->
+    <g transform="translate(0, 224)">
+      <circle cx="14" cy="14" r="14" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+      <text x="14" y="19" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="40" y="14" fill="#f8fafc" font-size="12" font-weight="bold">Enrich with Latest Release</text>
+      <text x="40" y="28" fill="#94a3b8" font-size="10">HTTP 200 OK — 5 items enriched (340ms)</text>
+    </g>
+
+    <line x1="14" y1="256" x2="14" y2="276" stroke="#10b981" stroke-width="2"/>
+
+    <!-- Step 6 -->
+    <g transform="translate(0, 280)">
+      <circle cx="14" cy="14" r="14" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+      <text x="14" y="19" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="40" y="14" fill="#f8fafc" font-size="12" font-weight="bold">Merge Enriched Release Data</text>
+      <text x="40" y="28" fill="#94a3b8" font-size="10">Metadata consolidated (8ms)</text>
+    </g>
+
+    <line x1="14" y1="312" x2="14" y2="332" stroke="#10b981" stroke-width="2"/>
+
+    <!-- Step 7 -->
+    <g transform="translate(0, 336)">
+      <circle cx="14" cy="14" r="14" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+      <text x="14" y="19" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="40" y="14" fill="#f8fafc" font-size="12" font-weight="bold">Evaluate Star Threshold (&gt;= 50k)</text>
+      <text x="40" y="28" fill="#94a3b8" font-size="10">Evaluated 5 items into Tier-1 &amp; Growth</text>
+    </g>
+
+    <line x1="14" y1="368" x2="14" y2="388" stroke="#10b981" stroke-width="2"/>
+
+    <!-- Step 8 -->
+    <g transform="translate(0, 392)">
+      <circle cx="14" cy="14" r="14" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+      <text x="14" y="19" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="40" y="14" fill="#f8fafc" font-size="12" font-weight="bold">Format Tier-1 Digest</text>
+      <text x="40" y="28" fill="#94a3b8" font-size="10">Constructed Discord markdown message (6ms)</text>
+    </g>
+
+    <line x1="14" y1="424" x2="14" y2="444" stroke="#10b981" stroke-width="2"/>
+
+    <!-- Step 9 -->
+    <g transform="translate(0, 448)">
+      <circle cx="14" cy="14" r="14" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+      <text x="14" y="19" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="40" y="14" fill="#f8fafc" font-size="12" font-weight="bold">Send Discord / Slack Digest</text>
+      <text x="40" y="28" fill="#94a3b8" font-size="10">HTTP 204 No Content — Dispatched (164ms)</text>
+    </g>
+  </g>
+
+  <!-- Right: Node Output Inspection Window -->
+  <rect x="510" y="70" width="915" height="680" rx="10" fill="#181827" stroke="#2e2e48"/>
+  <rect x="510" y="70" width="915" height="42" rx="10" fill="#222238"/>
+  <text x="530" y="96" fill="#f8fafc" font-size="13" font-weight="bold">Output Data Inspector: Node [Send Discord / Slack Digest] — 1 Item Returned</text>
+
+  <!-- JSON Output Panel -->
+  <rect x="530" y="130" width="875" height="290" rx="8" fill="#0f0f1a" stroke="#28283e"/>
+  <text x="545" y="155" fill="#38bdf8" font-size="12" font-family="monospace">// Formatted Outgoing Webhook Payload (Discord / Slack):</text>
+  <text x="545" y="180" fill="#e2e8f0" font-size="11" font-family="monospace">{</text>
+  <text x="565" y="200" fill="#f43f5e" font-size="11" font-family="monospace">"title"<span fill="#e2e8f0">: </span><span fill="#a7f3d0">"🚀 Daily Morning Brief: Tier-1 Mega Projects (Stars &gt;= 50k)"</span>,</text>
+  <text x="565" y="220" fill="#f43f5e" font-size="11" font-family="monospace">"timestamp"<span fill="#e2e8f0">: </span><span fill="#a7f3d0">"2026-11-10T08:00:00.842Z"</span>,</text>
+  <text x="565" y="240" fill="#f43f5e" font-size="11" font-family="monospace">"count"<span fill="#e2e8f0">: </span><span fill="#f59e0b">3</span>,</text>
+  <text x="565" y="260" fill="#f43f5e" font-size="11" font-family="monospace">"top_item"<span fill="#e2e8f0">: </span>{</text>
+  <text x="585" y="280" fill="#cbd5e1" font-size="11" font-family="monospace">"rank": 1, "full_name": "microsoft/TypeScript", "stars": 99480, "forks": 12450,</text>
+  <text x="585" y="300" fill="#cbd5e1" font-size="11" font-family="monospace">"latest_release_tag": "v5.6.3", "latest_release_date": "2026-10-18",</text>
+  <text x="585" y="320" fill="#cbd5e1" font-size="11" font-family="monospace">"html_url": "https://github.com/microsoft/TypeScript",</text>
+  <text x="585" y="340" fill="#cbd5e1" font-size="11" font-family="monospace">"topics": "javascript, language, typechecker, typescript"</text>
+  <text x="565" y="360" fill="#e2e8f0" font-size="11" font-family="monospace">},</text>
+  <text x="565" y="380" fill="#f43f5e" font-size="11" font-family="monospace">"delivery_status"<span fill="#e2e8f0">: </span><span fill="#4ade80">"HTTP 204 No Content - Successfully Delivered to Webhook Channel"</span></text>
+  <text x="545" y="402" fill="#e2e8f0" font-size="11" font-family="monospace">}</text>
+
+  <!-- Enriched Items Table -->
+  <text x="530" y="445" fill="#f8fafc" font-size="13" font-weight="bold">Enriched Dataset: Top 5 Repositories with Second API Release Data</text>
+  <rect x="530" y="460" width="875" height="270" rx="8" fill="#141422" stroke="#28283e"/>
+  
+  <!-- Table Header -->
+  <rect x="530" y="460" width="875" height="32" rx="8" fill="#25253e"/>
+  <text x="545" y="481" fill="#cbd5e1" font-size="11" font-weight="bold">Rank</text>
+  <text x="585" y="481" fill="#cbd5e1" font-size="11" font-weight="bold">Repository Full Name</text>
+  <text x="790" y="481" fill="#cbd5e1" font-size="11" font-weight="bold">Stars</text>
+  <text x="860" y="481" fill="#cbd5e1" font-size="11" font-weight="bold">Forks</text>
+  <text x="930" y="481" fill="#cbd5e1" font-size="11" font-weight="bold">Latest Release (API 2)</text>
+  <text x="1100" y="481" fill="#cbd5e1" font-size="11" font-weight="bold">Release Date</text>
+  <text x="1230" y="481" fill="#cbd5e1" font-size="11" font-weight="bold">Category Routing</text>
+
+  <!-- Row 1 -->
+  <text x="550" y="515" fill="#38bdf8" font-size="11" font-weight="bold">#1</text>
+  <text x="585" y="515" fill="#f8fafc" font-size="11" font-weight="bold">microsoft/TypeScript</text>
+  <text x="790" y="515" fill="#fbbf24" font-size="11">99,480</text>
+  <text x="860" y="515" fill="#cbd5e1" font-size="11">12,450</text>
+  <text x="930" y="515" fill="#34d399" font-size="11" font-weight="bold">v5.6.3</text>
+  <text x="1100" y="515" fill="#94a3b8" font-size="11">2026-10-18</text>
+  <rect x="1230" y="502" width="130" height="20" rx="4" fill="#3b82f6" fill-opacity="0.3"/>
+  <text x="1295" y="516" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">Tier-1 (&gt;= 50k)</text>
+
+  <!-- Row 2 -->
+  <text x="550" y="555" fill="#38bdf8" font-size="11" font-weight="bold">#2</text>
+  <text x="585" y="555" fill="#f8fafc" font-size="11" font-weight="bold">angular/angular</text>
+  <text x="790" y="555" fill="#fbbf24" font-size="11">95,120</text>
+  <text x="860" y="555" fill="#cbd5e1" font-size="11">25,180</text>
+  <text x="930" y="555" fill="#34d399" font-size="11" font-weight="bold">v18.2.8</text>
+  <text x="1100" y="555" fill="#94a3b8" font-size="11">2026-10-09</text>
+  <rect x="1230" y="542" width="130" height="20" rx="4" fill="#3b82f6" fill-opacity="0.3"/>
+  <text x="1295" y="556" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">Tier-1 (&gt;= 50k)</text>
+
+  <!-- Row 3 -->
+  <text x="550" y="595" fill="#38bdf8" font-size="11" font-weight="bold">#3</text>
+  <text x="585" y="595" fill="#f8fafc" font-size="11" font-weight="bold">ant-design/ant-design</text>
+  <text x="790" y="595" fill="#fbbf24" font-size="11">90,870</text>
+  <text x="860" y="595" fill="#cbd5e1" font-size="11">44,820</text>
+  <text x="930" y="595" fill="#34d399" font-size="11" font-weight="bold">5.21.4</text>
+  <text x="1100" y="595" fill="#94a3b8" font-size="11">2026-10-15</text>
+  <rect x="1230" y="582" width="130" height="20" rx="4" fill="#3b82f6" fill-opacity="0.3"/>
+  <text x="1295" y="596" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">Tier-1 (&gt;= 50k)</text>
+
+  <!-- Row 4 -->
+  <text x="550" y="635" fill="#38bdf8" font-size="11" font-weight="bold">#4</text>
+  <text x="585" y="635" fill="#f8fafc" font-size="11" font-weight="bold">shadcn-ui/ui</text>
+  <text x="790" y="635" fill="#fbbf24" font-size="11">49,200</text>
+  <text x="860" y="635" fill="#cbd5e1" font-size="11">4,910</text>
+  <text x="930" y="635" fill="#34d399" font-size="11" font-weight="bold">canary-2026</text>
+  <text x="1100" y="635" fill="#94a3b8" font-size="11">2026-10-22</text>
+  <rect x="1230" y="622" width="130" height="20" rx="4" fill="#f59e0b" fill-opacity="0.3"/>
+  <text x="1295" y="636" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">Emerging (&lt; 50k)</text>
+
+  <!-- Row 5 -->
+  <text x="550" y="675" fill="#38bdf8" font-size="11" font-weight="bold">#5</text>
+  <text x="585" y="675" fill="#f8fafc" font-size="11" font-weight="bold">trpc/trpc</text>
+  <text x="790" y="675" fill="#fbbf24" font-size="11">34,800</text>
+  <text x="860" y="675" fill="#cbd5e1" font-size="11">1,340</text>
+  <text x="930" y="675" fill="#34d399" font-size="11" font-weight="bold">v11.0.0-rc.512</text>
+  <text x="1100" y="675" fill="#94a3b8" font-size="11">2026-10-12</text>
+  <rect x="1230" y="662" width="130" height="20" rx="4" fill="#f59e0b" fill-opacity="0.3"/>
+  <text x="1295" y="676" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">Emerging (&lt; 50k)</text>
+</svg>

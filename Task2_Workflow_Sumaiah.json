@@ -1,0 +1,496 @@
+{
+  "name": "Task2_Workflow_Sumaiah",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "1b81906d-ca14-49d9-b05c-d760241a5855",
+      "name": "Schedule Trigger (Every 1 Hour)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "trigger-morning-brief",
+        "options": {}
+      },
+      "id": "fe983b1b-4390-4c23-9bf5-d3e1ea099218",
+      "name": "Manual / Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        200,
+        480
+      ],
+      "webhookId": "f8cf5abf-f2bb-4f38-a0b6-e731255a4e16"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/search/repositories",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "stars:>10000 language:typescript"
+            },
+            {
+              "name": "sort",
+              "value": "stars"
+            },
+            {
+              "name": "order",
+              "value": "desc"
+            },
+            {
+              "name": "per_page",
+              "value": "10"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "n8n-QA-Automation-Brief/1.0"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true,
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "c22a3e3d-e54d-4cf8-9b22-ad0733e787ad",
+      "name": "Fetch Top GitHub Repos",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        380
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check_status",
+              "leftValue": "={{ $json.error ? 'error' : ($json.items ? 'success' : 'error') }}",
+              "rightValue": "success",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "b606f62e-5900-410b-b6a7-4d36e679e4a5",
+      "name": "Check GitHub API Success",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        700,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Node: Transform & Filter Top 5\n// Reshapes raw GitHub Search API response\nconst rawData = $input.first().json;\n\nif (!rawData || !rawData.items || !Array.isArray(rawData.items)) {\n  return [{\n    json: {\n      error: true,\n      message: 'Invalid GitHub API payload structure or rate limit exceeded.'\n    }\n  }];\n}\n\n// 1. Filter out archived or disabled repositories\nconst activeRepos = rawData.items.filter(repo => !repo.archived && !repo.disabled);\n\n// 2. Sort explicitly by stargazers_count descending\nactiveRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);\n\n// 3. Keep exactly top 5 results\nconst top5 = activeRepos.slice(0, 5);\n\n// 4. Map & reshape fields into clean, standardized contract\nreturn top5.map((repo, index) => {\n  const forksToStarsRatio = repo.stargazers_count > 0 ? (repo.forks_count / repo.stargazers_count).toFixed(3) : '0';\n  const lastUpdatedDays = Math.floor((new Date() - new Date(repo.pushed_at)) / (1000 * 60 * 60 * 24));\n  \n  return {\n    json: {\n      rank: index + 1,\n      repo_id: repo.id,\n      name: repo.name,\n      full_name: repo.full_name,\n      owner: repo.owner?.login || 'unknown',\n      stars: repo.stargazers_count,\n      forks: repo.forks_count,\n      open_issues: repo.open_issues_count,\n      html_url: repo.html_url,\n      description: repo.description || 'No description provided.',\n      language: repo.language || 'TypeScript',\n      topics: (repo.topics || []).slice(0, 4).join(', ') || 'none',\n      forks_stars_ratio: forksToStarsRatio,\n      days_since_push: lastUpdatedDays,\n      enriched: false\n    }\n  };\n});"
+      },
+      "id": "cec75186-6853-46b5-a419-b98f6550aec3",
+      "name": "Transform & Filter Top 5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        940,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.github.com/repos/{{ $json.full_name }}/releases/latest",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "n8n-QA-Automation-Brief/1.0"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true,
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "9e765aea-fdb1-478f-9f6a-cc634def7d21",
+      "name": "Enrich with Latest Release",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1180,
+        280
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Node: Merge & Normalize Enriched Release Metadata\n// Merges original repo item data with second API response\nconst items = $input.all();\n\nreturn items.map(item => {\n  // Access previous node data for the parent repository\n  const repoData = $('Transform & Filter Top 5').item.json;\n  const releaseData = item.json;\n\n  let latestTag = 'No formal release';\n  let releaseName = 'N/A';\n  let publishedDate = 'N/A';\n  let releaseUrl = repoData.html_url + '/releases';\n\n  // If latest release exists and is not a 404/error object\n  if (releaseData && releaseData.tag_name && !releaseData.error) {\n    latestTag = releaseData.tag_name;\n    releaseName = releaseData.name || releaseData.tag_name;\n    publishedDate = releaseData.published_at ? releaseData.published_at.substring(0, 10) : 'N/A';\n    releaseUrl = releaseData.html_url || releaseUrl;\n  }\n\n  return {\n    json: {\n      ...repoData,\n      enriched: true,\n      latest_release_tag: latestTag,\n      latest_release_name: releaseName,\n      latest_release_date: publishedDate,\n      latest_release_url: releaseUrl,\n      is_tier1_mega: repoData.stars >= 50000\n    }\n  };\n});"
+      },
+      "id": "f39ed33d-41ff-4fba-b41e-c7d32bfa980a",
+      "name": "Merge Enriched Release Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1420,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "star_threshold",
+              "leftValue": "={{ $json.stars }}",
+              "rightValue": 50000,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "5a2a305b-a0d7-4ba0-a318-9a27823f8ab6",
+      "name": "Evaluate Star Threshold (>= 50k)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1660,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Node: Format Tier 1 Mega-Project Digest\nconst items = $input.all();\nconst repos = items.map(i => i.json);\n\nconst repoLines = repos.map(r => {\n  return `\u2b50 **[#${r.rank}] [${r.full_name}](${r.html_url})**\n\u2022 **Stars:** ${r.stars.toLocaleString()} | **Forks:** ${r.forks.toLocaleString()} | **Issues:** ${r.open_issues}\n\u2022 **Release:** [${r.latest_release_tag}](${r.latest_release_url}) (${r.latest_release_date})\n\u2022 **Topics:** \\`${r.topics}\\`\n\u2022 *${r.description}*`;\n}).join('\\n\\n');\n\nconst message = {\n  title: '\ud83d\ude80 Daily Morning Brief: Tier-1 Mega Projects (Stars >= 50k)',\n  category: 'Tier-1 Mega Repos',\n  timestamp: new Date().toISOString(),\n  count: repos.length,\n  content: repoLines\n};\n\nreturn [{ json: message }];"
+      },
+      "id": "44714f60-a283-4d58-b640-f5cf805cfc41",
+      "name": "Format Tier-1 Digest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1900,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Node: Format Emerging High-Growth Digest\nconst items = $input.all();\nconst repos = items.map(i => i.json);\n\nconst repoLines = repos.map(r => {\n  return `\u2728 **[#${r.rank}] [${r.full_name}](${r.html_url})**\n\u2022 **Stars:** ${r.stars.toLocaleString()} | **Forks:** ${r.forks.toLocaleString()}\n\u2022 **Latest Tag:** ${r.latest_release_tag}\n\u2022 *${r.description}*`;\n}).join('\\n\\n');\n\nconst message = {\n  title: '\ud83c\udf31 Daily Morning Brief: High-Growth Trending Projects (< 50k Stars)',\n  category: 'High-Growth Trending',\n  timestamp: new Date().toISOString(),\n  count: repos.length,\n  content: repoLines\n};\n\nreturn [{ json: message }];"
+      },
+      "id": "36ef22e4-6cc7-469e-a49d-9424d09db97d",
+      "name": "Format High-Growth Digest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1900,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://discord.com/api/webhooks/YOUR_WEBHOOK_URL_OR_SLACK",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "content",
+              "value": "=\ud83d\udce2 **{{ $json.title }}**\\nGenerated at: {{ $json.timestamp }}\\n\\n{{ $json.content }}\\n\\n*Automation managed by Antigravity n8n Brief Bot*"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "4122977a-1921-4167-92fd-8723c1834125",
+      "name": "Send Discord / Slack Digest",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2160,
+        280
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://discord.com/api/webhooks/YOUR_ALERT_WEBHOOK_URL",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "content",
+              "value": "=\u26a0\ufe0f **[CRITICAL ALERT] Morning Brief Workflow API Error**\\nAn issue occurred during GitHub API search fetch.\\nPayload details: {{ JSON.stringify($json) }}\\n*Workflow did not crash silently; error branch triggered successfully.*"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c3004379-6632-4e32-a782-ef04d9575630",
+      "name": "Send Fallback Error Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        940,
+        520
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2814c562-82c0-4b29-87cf-d81fa6a7cb03",
+      "name": "Global Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        460,
+        680
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://discord.com/api/webhooks/YOUR_INCIDENT_WEBHOOK_URL",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "content",
+              "value": "=\ud83d\udea8 **[FATAL INCIDENT] Global n8n Workflow Exception**\\nExecution ID: {{ $json.execution.id }}\\nError Message: {{ $json.execution.error.message }}\\nWorkflow: Task2_Workflow_Sumaiah"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1d1a29f0-cd7b-4dd8-992d-794dca4633df",
+      "name": "Send Global Exception Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        700,
+        680
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger (Every 1 Hour)": {
+      "main": [
+        [
+          {
+            "node": "Fetch Top GitHub Repos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual / Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch Top GitHub Repos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Top GitHub Repos": {
+      "main": [
+        [
+          {
+            "node": "Check GitHub API Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check GitHub API Success": {
+      "main": [
+        [
+          {
+            "node": "Transform & Filter Top 5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Fallback Error Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transform & Filter Top 5": {
+      "main": [
+        [
+          {
+            "node": "Enrich with Latest Release",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enrich with Latest Release": {
+      "main": [
+        [
+          {
+            "node": "Merge Enriched Release Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Enriched Release Data": {
+      "main": [
+        [
+          {
+            "node": "Evaluate Star Threshold (>= 50k)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evaluate Star Threshold (>= 50k)": {
+      "main": [
+        [
+          {
+            "node": "Format Tier-1 Digest",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format High-Growth Digest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Tier-1 Digest": {
+      "main": [
+        [
+          {
+            "node": "Send Discord / Slack Digest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format High-Growth Digest": {
+      "main": [
+        [
+          {
+            "node": "Send Discord / Slack Digest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Global Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send Global Exception Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "UTC",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "7994c27e-b8ba-489d-a93a-ec31d6ce962f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "assessment-n8n-instance-01"
+  },
+  "id": "Task2_MorningBrief",
+  "tags": [
+    {
+      "createdAt": "2026-11-10T11:00:00.000Z",
+      "updatedAt": "2026-11-10T11:00:00.000Z",
+      "id": "qa-automation-brief",
+      "name": "QA-Automation"
+    }
+  ]
+}

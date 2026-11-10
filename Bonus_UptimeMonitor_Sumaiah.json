@@ -1,0 +1,409 @@
+{
+  "name": "Bonus_UptimeMonitor_Sumaiah",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 5
+            }
+          ]
+        }
+      },
+      "id": "5de00a93-9f88-4212-ab37-f74b96862b64",
+      "name": "Schedule Trigger (Every 5 Minutes)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "test-uptime-ping",
+        "options": {}
+      },
+      "id": "019a9426-2100-49ec-966b-49cadbc978c9",
+      "name": "Manual / Test Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        200,
+        480
+      ],
+      "webhookId": "cca10ae9-9024-42e4-a96a-37f1603f688b"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Record start timestamp for precise latency measurement\nreturn [{\n  json: {\n    target_url: 'https://demo.realworld.io/api/articles?limit=1',\n    monitor_name: 'Conduit RealWorld Demo Backend API',\n    check_started_at: Date.now(),\n    timestamp_iso: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "e5286664-39eb-47b6-9fe1-c9fec659af30",
+      "name": "Initialize Monitor Check",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $json.target_url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "n8n-Uptime-Monitor-Agent/1.0"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true,
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "4bb2b280-7ee7-4f29-9f42-fb5f8432d81f",
+      "name": "Ping Conduit Web App",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        380
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Compute round-trip latency & analyze HTTP response\nconst initData = $('Initialize Monitor Check').item.json;\nconst responseItem = $input.first();\nconst endedAt = Date.now();\nconst latencyMs = endedAt - initData.check_started_at;\n\nlet statusCode = 200;\nlet isHealthy = true;\nlet failureReason = 'None';\n\nif (responseItem.json.error) {\n  statusCode = responseItem.json.statusCode || responseItem.json.error.status || 500;\n  isHealthy = false;\n  failureReason = responseItem.json.error.message || 'Connection or socket failure';\n} else if (responseItem.json.status && responseItem.json.status !== 200) {\n  statusCode = responseItem.json.status;\n  isHealthy = false;\n  failureReason = `Non-200 HTTP status returned: ${statusCode}`;\n}\n\n// Latency SLA threshold check (warn if > 2500ms)\nconst exceedsLatencySLA = latencyMs > 2500;\n\nreturn [{\n  json: {\n    target_url: initData.target_url,\n    monitor_name: initData.monitor_name,\n    timestamp: initData.timestamp_iso,\n    status_code: statusCode,\n    latency_ms: latencyMs,\n    exceeds_latency_sla: exceedsLatencySLA,\n    is_healthy: isHealthy && statusCode === 200,\n    failure_reason: failureReason,\n    attempt: 1\n  }\n}];"
+      },
+      "id": "b332225b-9c89-48fd-8d9a-dadf5209a3d2",
+      "name": "Calculate Latency & Health",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "health_check",
+              "leftValue": "={{ $json.is_healthy }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "d29791b9-86ee-4e3d-aa86-5e10641983bd",
+      "name": "Is Service Healthy (200 OK)?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "unit": "seconds"
+      },
+      "id": "af136fab-d33e-40bb-b24a-f8a2ffb1219b",
+      "name": "Wait 3s Before Retry",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1340,
+        520
+      ],
+      "webhookId": "6eb2a41a-de60-4086-9b11-ba5dcdd8e293"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://demo.realworld.io/api/articles?limit=1",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "n8n-Uptime-Retry-Agent/1.0"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "cb9614d0-e60f-44d6-a0e0-c7d1d9effbeb",
+      "name": "Retry Verification Ping",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1560,
+        520
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "retry_status_check",
+              "leftValue": "={{ $json.error ? 'failed' : ($json.articles ? 'success' : 'failed') }}",
+              "rightValue": "failed",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "b70abd2d-0fa8-42e0-80c3-9c45410926ab",
+      "name": "Confirmed Outage After Retry?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1800,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://discord.com/api/webhooks/YOUR_OUTAGE_ALERT_WEBHOOK",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "content",
+              "value": "=\ud83d\udea8 **[SERVICE DOWN ALERT] Web App Uptime Failure Detected!**\\n\u2022 **Target:** `demo.realworld.io`\\n\u2022 **Status Code:** {{ $('Calculate Latency & Health').item.json.status_code }}\\n\u2022 **Failure Reason:** {{ $('Calculate Latency & Health').item.json.failure_reason }}\\n\u2022 **Initial Latency:** {{ $('Calculate Latency & Health').item.json.latency_ms }} ms\\n\u2022 **Retry Attempt:** Confirmed DOWN after 3s retry.\\n\u2022 **Timestamp:** {{ $now.toISO() }}\\n*Immediate attention required from DevOps / QA Team.*"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4ed71608-1de3-4145-bbe9-43524c8ffa9e",
+      "name": "Dispatch Critical Outage Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2060,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://discord.com/api/webhooks/YOUR_WARNING_WEBHOOK",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "content",
+              "value": "=\u26a0\ufe0f **[TRANSIENT FLAKE RECOVERED]**\\nInitial ping failed, but secondary retry succeeded within 3s.\\nTarget: `demo.realworld.io`\\nService remains ONLINE."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f780a9d3-009a-4347-96af-b1b0eb628706",
+      "name": "Log Transient Recovery",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2060,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Service is healthy (200 OK)\nconst data = $input.first().json;\nreturn [{\n  json: {\n    status: 'ONLINE',\n    latency_ms: data.latency_ms,\n    timestamp: data.timestamp,\n    message: `Heartbeat OK: ${data.monitor_name} responded with HTTP 200 in ${data.latency_ms}ms.`\n  }\n}];"
+      },
+      "id": "db6c8abd-93cd-4826-9faa-8a74a8f8176a",
+      "name": "Log Healthy Heartbeat",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        260
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger (Every 5 Minutes)": {
+      "main": [
+        [
+          {
+            "node": "Initialize Monitor Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual / Test Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Initialize Monitor Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Initialize Monitor Check": {
+      "main": [
+        [
+          {
+            "node": "Ping Conduit Web App",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ping Conduit Web App": {
+      "main": [
+        [
+          {
+            "node": "Calculate Latency & Health",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Latency & Health": {
+      "main": [
+        [
+          {
+            "node": "Is Service Healthy (200 OK)?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Service Healthy (200 OK)?": {
+      "main": [
+        [
+          {
+            "node": "Log Healthy Heartbeat",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 3s Before Retry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3s Before Retry": {
+      "main": [
+        [
+          {
+            "node": "Retry Verification Ping",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retry Verification Ping": {
+      "main": [
+        [
+          {
+            "node": "Confirmed Outage After Retry?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirmed Outage After Retry?": {
+      "main": [
+        [
+          {
+            "node": "Dispatch Critical Outage Alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Transient Recovery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "UTC",
+    "saveManualExecutions": true
+  },
+  "versionId": "acf260a0-7555-4615-8196-34f6565436e8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "assessment-n8n-instance-01"
+  },
+  "id": "Bonus_UptimeMonitor",
+  "tags": [
+    {
+      "createdAt": "2026-11-10T11:00:00.000Z",
+      "updatedAt": "2026-11-10T11:00:00.000Z",
+      "id": "qa-uptime-monitor",
+      "name": "QA-Uptime"
+    }
+  ]
+}
